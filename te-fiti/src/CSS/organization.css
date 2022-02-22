@@ -1,0 +1,179 @@
+#OrgList {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.avatarResource {
+  width: 50px;
+  min-width: 50px;
+  height: auto;
+  margin: 10px;
+}
+
+.avatarConcept {
+  width: 50px;
+  min-width: 50px;
+  height: auto;
+  margin: 10px;
+}
+
+.avatarOrganization {
+  width: 40px;
+  min-width: 40px;
+  height: auto;
+  margin: 5px;
+}
+
+.avatarComment {
+  width: 40px;
+  min-width: 40px;
+  height: auto;
+  margin: 0px;
+}
+
+.Button {
+  margin: 5px;
+}
+
+.organizationTitleWhite {
+  color: white;
+}
+
+.organizationTitleBlack {
+  color: black;
+}
+
+.addCommentButton {
+  margin-top: 10px;
+}
+
+.formAddComment {
+  margin-top: 10px;
+}
+
+.ButtonArchiveComment {
+  margin: 5px;
+}
+
+.ButtonArchive {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+  color: gray;
+  padding: 0.375rem 0.75rem;
+  margin: 5px;
+}
+
+.ButtonArchive.hollow {
+  border-color: gray;
+  color: gray;
+}
+
+.ButtonArchive.hollow:hover,
+.ButtonArchive:focus {
+  border-color: black;
+  color: black;
+}
+
+.ButtonArchive.hollow,
+.ButtonArchive.hollow:hover,
+.ButtonArchive:focus {
+  background-color: transparent;
+}
+
+.textareaModal {
+  min-width: 100px;
+  min-height: 150px;
+  max-width: 500px;
+  max-height: 150px;
+}
+
+.popoverWidth {
+  min-width: 350px;
+}
+
+.Votes {
+  max-width: 10px;
+  width: 2px;
+  min-width: 10px;
+  max-height: 10px;
+  min-height: 10px;
+  vertical-align: middle;
+}
+
+.VoteContainer {
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+.RankContainer {
+  margin-top: 5px;
+}
+
+.LanguageSelect {
+  width: 250px;
+  text-align: left;
+}
+
+.VoteActive {
+  color: blue;
+  padding: 5px;
+}
+
+.VoteInactive {
+  color: gray;
+}
+
+.disabledContent {
+  pointer-events: none;
+}
+
+.highlight {
+  background: transparent;
+}
+
+@keyframes colorChange {
+  from {
+    filter: sepia(300%) saturate(10);
+  }
+  to {
+    filter: sepia(0%);
+  }
+}
+
+.highlight:focus {
+  animation-name: colorChange;
+  animation-duration: 1.5s;
+  animation-delay: 0.1s;
+}
+
+.comment {
+  margin-left: 3rem;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.Hyperlink:hover {
+  text-decoration: none;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+}

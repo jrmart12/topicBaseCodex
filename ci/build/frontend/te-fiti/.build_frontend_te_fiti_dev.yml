@@ -1,0 +1,31 @@
+build-frontend-dev-te-fiti:
+  stage: build
+  image: node:15.11.0
+  script:
+    - cd te-fiti
+    - export REACT_APP_APIKEY=${FIREBASE_APIKEY_DEV}
+    - export REACT_APP_AUTHDOMAIN=${FIREBASE_AUTHDOMAIN_DEV}
+    - export REACT_APP_PROJECTID=${FIREBASE_PROJECTID_DEV}
+    - export REACT_APP_STORAGEBUCKET=${FIREBASE_STORAGEBUCKET_DEV}
+    - export REACT_APP_MESSAGINSENDERID=${FIREBASE_MESSAGINSENDERID_DEV}
+    - export REACT_APP_APPID=${FIREBASE_APPID_DEV}
+    - export REACT_APP_MEASUREMENTID=${FIREBASE_MEASUREMENTID_DEV}
+    - export REACT_APP_EDIT_ARCHIVE_RESOURCE_TIMEALERT=${RESOURCE_TIMEALERT}
+    - export REACT_APP_SHOW_N_COMMENTS=${COMMENTS}
+    - export REACT_APP_EDIT_ARCHIVE_COMMENT_TIMEALERT=${COMMENT_TIMEALERT}
+    - npm install
+    - npm run build
+  cache:
+    key: tefiti-frontend-build-cache
+    paths:
+      - te-fiti/node_modules/*
+  artifacts:
+    paths:
+      - te-fiti/build/*
+  only:
+    refs:
+      - dev
+    changes:
+      - te-fiti/**/*
+      - ci/build/frontend/te-fiti/.build_frontend_te_fiti_dev.yml
+      - .gitlab-ci.yml

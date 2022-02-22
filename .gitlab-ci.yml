@@ -1,0 +1,19 @@
+include:
+  #Dev
+  - "/ci/build/frontend/te-fiti/.build_frontend_te_fiti_dev.yml"
+  - "/ci/build/frontend/te-ka/.build_frontend_te_ka_dev.yml"
+  - "/ci/deploy/frontend/te-fiti/.deploy_frontend_te_fiti_dev.yml"
+  - "/ci/deploy/frontend/te-ka/.deploy_frontend_te_ka_dev.yml"
+  #Staging
+  - "/ci/build/frontend/te-fiti/.build_frontend_te_fiti_staging.yml"
+  - "/ci/build/frontend/te-ka/.build_frontend_te_ka_staging.yml"
+  - "/ci/deploy/frontend/te-fiti/.deploy_frontend_te_fiti_staging.yml"
+  - "/ci/deploy/frontend/te-ka/.deploy_frontend_te_ka_staging.yml"
+  #Prod
+  - "/ci/build/frontend/te-fiti/.build_frontend_te_fiti_prod.yml"
+  - "/ci/build/frontend/te-ka/.build_frontend_te_ka_prod.yml"
+  - "/ci/deploy/frontend/te-fiti/.deploy_frontend_te_fiti_prod.yml"
+  - "/ci/deploy/frontend/te-ka/.deploy_frontend_te_ka_prod.yml"
+stages:
+  - build
+  - deploy

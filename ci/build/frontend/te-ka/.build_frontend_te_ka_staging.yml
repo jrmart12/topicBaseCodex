@@ -1,0 +1,28 @@
+build-frontend-staging-te-ka:
+  stage: build
+  image: node:15.11.0
+  script:
+    - cd te-ka
+    - export REACT_APP_APIKEY=${FIREBASE_APIKEY_STAGING}
+    - export REACT_APP_AUTHDOMAIN=${FIREBASE_AUTHDOMAIN_STAGING}
+    - export REACT_APP_PROJECTID=${FIREBASE_PROJECTID_STAGING}
+    - export REACT_APP_STORAGEBUCKET=${FIREBASE_STORAGEBUCKET_STAGING}
+    - export REACT_APP_MESSAGINSENDERID=${FIREBASE_MESSAGINSENDERID_STAGING}
+    - export REACT_APP_APPID=${FIREBASE_APPID_STAGING}
+    - export REACT_APP_MEASUREMENTID=${FIREBASE_MEASUREMENTID_STAGING}
+    - npm install
+    - npm run build
+  cache:
+    key: teka-frontend-build-cache
+    paths:
+      - te-ka/node_modules/*
+  artifacts:
+    paths:
+      - te-ka/build/*
+  only:
+    refs:
+      - staging
+    changes:
+      - te-ka/**/*
+      - ci/build/frontend/te-ka/.build_frontend_te_ka_staging.yml
+      - .gitlab-ci.yml

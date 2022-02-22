@@ -1,0 +1,19 @@
+deploy-frontend-dev-te-ka:
+  stage: deploy
+  image: node:15.11.0
+  script:
+    - npm install -g firebase-tools@9.7
+    - firebase use dev --token "${FIREBASE_CI}"
+    - firebase target:apply hosting te-ka-dev-399d0 te-ka-dev-399d0 --non-interactive
+    - firebase deploy --only hosting:te-ka-dev-399d0 --non-interactive --token "${FIREBASE_CI}"
+  cache:
+    key: firebase-cache
+    paths:
+      - node_modules/
+  only:
+    refs:
+      - dev
+    changes:
+      - te-ka/**/*
+      - ci/deploy/frontend/te-ka/.deploy_frontend_te_ka_dev.yml
+      - .gitlab-ci.yml

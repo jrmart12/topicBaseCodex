@@ -1,0 +1,20 @@
+deploy-frontend-prod-te-fiti:
+  stage: deploy
+  image: node:15.11.0
+  script:
+    - npm install -g firebase-tools@9.7
+    - firebase use prod --token "${FIREBASE_CI}"
+    - firebase target:apply hosting te-fiti te-fiti --non-interactive
+    - firebase deploy --only hosting:te-fiti --non-interactive --token "${FIREBASE_CI}"
+  when: manual
+  cache:
+    key: firebase-cache
+    paths:
+      - node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - te-fiti/**/*
+      - ci/deploy/frontend/te-fiti/.deploy_frontend_te_fiti_prod.yml
+      - .gitlab-ci.yml

@@ -1,0 +1,39 @@
+{
+  "projects": {
+    "dev": "te-fiti-dev-399d0",
+    "prod": "te-fiti",
+    "staging": "te-fiti-staging-87104"
+  },
+  "targets": {
+    "te-fiti": {
+      "hosting": {
+        "te-ka-app": [
+          "te-ka-app"
+        ],
+        "te-fiti": [
+          "te-fiti"
+        ]
+      }
+    },
+    "te-fiti-staging-87104": {
+      "hosting": {
+        "te-fiti-staging-87104": [
+          "te-fiti-staging-87104"
+        ],
+        "te-ka-staging-87104": [
+          "te-ka-staging-87104"
+        ]
+      }
+    },
+    "te-fiti-dev-399d0": {
+      "hosting": {
+        "te-fiti-dev-399d0": [
+          "te-fiti-dev-399d0"
+        ],
+        "te-ka-dev-399d0": [
+          "te-ka-dev-399d0"
+        ]
+      }
+    }
+  }
+}

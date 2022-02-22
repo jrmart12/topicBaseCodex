@@ -1,0 +1,65 @@
+{
+  "hosting": [
+    {
+      "target": "te-ka-dev-399d0",
+      "public": "te-ka/build",
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    },
+    {
+      "target": "te-fiti-dev-399d0",  
+      "public": "te-fiti/build", 
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    },
+    {
+      "target": "te-ka-staging-87104",
+      "public": "te-ka/build",
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    },
+    {
+      "target": "te-fiti-staging-87104",  
+      "public": "te-fiti/build", 
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    },
+    {
+      "target": "te-ka-app",
+      "public": "te-ka/build",
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    },
+    {
+      "target": "te-fiti",  
+      "public": "te-fiti/build", 
+      "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    }
+  ]
+}
+
